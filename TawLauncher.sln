@@ -1,9 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31005.135
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TawLauncher", "TawLauncher.csproj", "{66D2C98D-9991-4721-8ADE-876B5AEBEDE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TawLauncher", "TawLauncher\TawLauncher.csproj", "{89A65A8E-F2F6-4264-B37A-600689824530}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{66D2C98D-9991-4721-8ADE-876B5AEBEDE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66D2C98D-9991-4721-8ADE-876B5AEBEDE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66D2C98D-9991-4721-8ADE-876B5AEBEDE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66D2C98D-9991-4721-8ADE-876B5AEBEDE5}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EEB8CA73-7AE2-4B83-8806-CC60CE12FB72}
+		{89A65A8E-F2F6-4264-B37A-600689824530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A65A8E-F2F6-4264-B37A-600689824530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A65A8E-F2F6-4264-B37A-600689824530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A65A8E-F2F6-4264-B37A-600689824530}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
