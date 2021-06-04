@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:TawLauncher"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="600" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Button Margin="100,100, 400, 100" Content="CheckForUpdates" Name="B1" Click="B1_OnClick"/>
-        <Button Margin="250,100, 250, 100" Content="DownloadUpdate" Name="B2" IsEnabled="False" Click="B2_OnClick"/>
-        <Button Margin="400,100, 100, 100" Content="Run" Name="B3" Click="B3_OnClick"/>
-    </Grid>
+  <Grid>
+    <Button Margin="100,100, 400, 100" Content="CheckForUpdates" Name="B1" Click="B1_OnClick"/>
+    <Button Margin="250,100, 250, 100" Content="DownloadUpdate" Name="B2" IsEnabled="False" Click="B2_OnClick"/>
+    <Button Margin="400,100, 100, 100" Content="Run" Name="B3" Click="B3_OnClick"/>
+  </Grid>
 </Window>
