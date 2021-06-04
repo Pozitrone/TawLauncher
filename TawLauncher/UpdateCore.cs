@@ -11,15 +11,15 @@ namespace TawLauncher
 {
   public static class UpdateCore
   {
-    private static string _versionFileUrl = null;
-    private static string _updateFileUrl = null;
+    private static string _versionFileUrl;
+    private static string _updateFileUrl;
     private static bool _automaticallyUpdate = true;
-    private static string _exeToRun = null; // TODO: Validate if exe
+    private static string _exeToRun; // TODO: Validate if exe
     private static bool _runAfterUpdate = true;
-    private static bool _keepZip = false;
-    private static bool _keepLauncherOpen = false;
+    private static bool _keepZip;
+    private static bool _keepLauncherOpen;
 
-    private static bool _updateAvailable = false;
+    private static bool _updateAvailable;
 
     public static Version CheckForUpdates()
     {
