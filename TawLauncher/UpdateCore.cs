@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
@@ -10,10 +11,10 @@ namespace TawLauncher
 {
   public static class UpdateCore
   {
-    private static string _versionFileUrl = "C:\\Users\\TheAshenWolf\\Desktop\\TawLtest\\version.txt";
-    private static string _updateFileUrl = "C:\\Users\\TheAshenWolf\\Desktop\\TawLtest\\app.zip";
+    private static string _versionFileUrl = null;
+    private static string _updateFileUrl = null;
     private static bool _automaticallyUpdate = true;
-    private static string _exeToRun = "MinecraftClient.exe"; // TODO: Validate if exe
+    private static string _exeToRun = null; // TODO: Validate if exe
     private static bool _runAfterUpdate = true;
     private static bool _keepZip = false;
     private static bool _keepLauncherOpen = false;
@@ -41,15 +42,15 @@ namespace TawLauncher
     public static void Update()
     {
       if (!_updateAvailable) return;
-      
+
       if (Directory.Exists("Data")) Directory.Delete("Data", true);
       DownloadUpdateFile(_updateFileUrl);
       ZipFile.ExtractToDirectory("Data/Application.zip", "Data/Application");
       if (!_keepZip) File.Delete("Data/Application.zip");
-      
+
       File.Copy("temp/version.txt", "Data/version.txt");
       Directory.Delete("temp", true);
-      
+
       if (_runAfterUpdate) Run();
     }
 
@@ -119,9 +120,65 @@ namespace TawLauncher
       return new Version(File.ReadLines(path).First());
     }
 
-    private static void ReadConfigFile()
+    public static void ReadConfigFile()
     {
-      // TODO:
+      if (!File.Exists("taw.conf"))
+      {
+        MessageBox.Show("Config file not found. Generating blank config file.", "Taw Launcher");
+        GenerateConfigFile();
+        Application.Current.Shutdown();
+      }
+
+      string[] rawConfig = File.ReadAllLines("taw.conf");
+      //MessageBox.Show(rawConfig.Where(line => line != "" && line[0] != '#').ToList().Aggregate((x , y) => x + "\n" + y).ToString());
+      List<string> config = rawConfig.Where(line => line != "" && line[0] != '#').Select(x => x.Split('=')[1]).ToList();
+
+      try
+      {
+        _versionFileUrl = config[0];
+        _updateFileUrl = config[1];
+        _automaticallyUpdate = bool.Parse(config[2]);
+        _exeToRun = config[3];
+        _runAfterUpdate = bool.Parse(config[4]);
+        _keepZip = bool.Parse(config[5]);
+        _keepLauncherOpen = bool.Parse(config[6]);
+      }
+      catch
+      {
+        MessageBox.Show("Config file invalid. Please, check the values.", "Taw Launcher");
+        Application.Current.Shutdown();
+      }
+    }
+
+    private static void GenerateConfigFile()
+    {
+      FileStream configFile = File.Create("taw.conf");
+      configFile.Close();
+
+      string[] config = new string[]
+      {
+        "# Url where the app downloads the version.txt from",
+        "VERSION_FILE_URL=\n",
+
+        "# Url to the zipped project",
+        "APPLICATION_ZIP_URL=\n",
+
+        "# Whether the app should automatically update upon startup (default FALSE)",
+        "AUTOMATICALLY_UPDATE=FALSE\n",
+
+        "# Name of the .exe file within the zip",
+        "EXE_TO_RUN=\n",
+
+        "# Automatically start the app after finishing the download (default FALSE)",
+        "RUN_AFTER_UPDATE_FINISHED=FALSE\n",
+
+        "# Whether the app should keep the zip file (default FALSE)",
+        "KEEP_ZIP_FILE=FALSE\n",
+
+        "# Whether the launcher should be kept open after starting the app (default FALSE)",
+        "KEEP_LAUNCHER_OPEN=FALSE\n"
+      };
+      File.WriteAllLines("taw.conf", config);
     }
   }
 }
