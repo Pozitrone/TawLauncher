@@ -26,8 +26,12 @@ namespace TawLauncher
       Version currentVersion = CheckCurrentVersion();
       Version newVersion = CheckNewVersion();
 
-      if (newVersion == null) throw new Exception("Couldn't get updates. Please, check your connection.");
-
+      if (newVersion == null)
+      {
+        MessageBox.Show("Couldn't get updates. Please, check your connection.", "Taw Launcher");
+        Application.Current.Shutdown();
+      }
+      
       if (currentVersion == null || currentVersion < newVersion)
       {
         _updateAvailable = true;
@@ -142,6 +146,10 @@ namespace TawLauncher
         _runAfterUpdate = bool.Parse(config[4]);
         _keepZip = bool.Parse(config[5]);
         _keepLauncherOpen = bool.Parse(config[6]);
+
+        MessageBox.Show(_versionFileUrl);
+        MessageBox.Show(_updateFileUrl);
+        MessageBox.Show(_exeToRun);
       }
       catch
       {

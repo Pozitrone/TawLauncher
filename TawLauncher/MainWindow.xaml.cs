@@ -10,6 +10,7 @@ namespace TawLauncher
     public MainWindow()
     {
       InitializeComponent();
+      UpdateCore.ReadConfigFile();
     }
 
     private void StartLauncher(object sender, RoutedEventArgs e)
