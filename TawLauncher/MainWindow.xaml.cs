@@ -1,4 +1,6 @@
-﻿namespace TawLauncher
+﻿using System.Windows;
+
+namespace TawLauncher
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -8,6 +10,12 @@
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void StartLauncher(object sender, RoutedEventArgs e)
+        {
+            Launcher launcher = new Launcher {mainWindow = this};
+            launcher.Show();
+            this.Close();
         }
     }
 }

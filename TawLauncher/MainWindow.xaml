@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TawLauncher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1000" Width="1600">
+        Title="MainWindow" Height="300" Width="600" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True"
+        Background="Transparent" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Width="200" Content="Button" Height="200"/>
+        <Button Margin="200,100" Click="StartLauncher" Content="Start Launcher"/>
     </Grid>
 </Window>
