@@ -2,20 +2,21 @@
 
 namespace TawLauncher
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow
+  /// <summary>
+  /// Interaction logic for MainWindow.xaml
+  /// </summary>
+  public partial class MainWindow
+  {
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-        private void StartLauncher(object sender, RoutedEventArgs e)
-        {
-            Launcher launcher = new Launcher {mainWindow = this};
-            launcher.Show();
-            this.Close();
-        }
+      InitializeComponent();
     }
+
+    private void StartLauncher(object sender, RoutedEventArgs e)
+    {
+      Launcher launcher = new Launcher();
+      launcher.Show();
+      this.Close();
+    }
+  }
 }
