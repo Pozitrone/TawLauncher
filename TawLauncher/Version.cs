@@ -97,6 +97,6 @@ namespace TawLauncher
       return !(x >= y);
     }
 
-    public bool IsNull { get; }
+    private bool IsNull { get; }
   }
 }

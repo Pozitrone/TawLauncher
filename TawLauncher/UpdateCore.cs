@@ -14,7 +14,7 @@ namespace TawLauncher
     private static string _versionFileUrl;
     private static string _updateFileUrl;
     private static bool _automaticallyUpdate = true;
-    private static string _exeToRun; // TODO: Validate if exe
+    private static string _exeToRun;
     private static bool _runAfterUpdate = true;
     private static bool _keepZip;
     private static bool _keepLauncherOpen;
