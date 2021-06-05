@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System.Windows;
 
 namespace TawLauncher
 {
@@ -11,9 +12,16 @@ namespace TawLauncher
     {
       InitializeComponent();
       UpdateCore.ReadConfigFile();
+      RunLauncherAfterDelay();
     }
 
-    private void StartLauncher(object sender, RoutedEventArgs e)
+    private async void RunLauncherAfterDelay(int delay = 1000)
+    {
+      await Task.Delay(delay);
+      StartLauncher();
+    }
+    
+    private void StartLauncher()
     {
       Launcher launcher = new Launcher();
       launcher.Show();

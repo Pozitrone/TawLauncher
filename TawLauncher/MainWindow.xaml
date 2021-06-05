@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="600" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True"
+        Title="MainWindow" Height="100" Width="300" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True"
         Background="Transparent" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Margin="200,100" Click="StartLauncher" Content="Start Launcher"/>
+        <Image Source="Resources/large.png" Width="300" Opacity="1"></Image>
     </Grid>
 </Window>
