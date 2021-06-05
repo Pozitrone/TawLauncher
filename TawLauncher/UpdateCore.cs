@@ -142,20 +142,18 @@ namespace TawLauncher
         _versionFileUrl = config[0];
         _updateFileUrl = config[1];
         _automaticallyUpdate = bool.Parse(config[2]);
-        _exeToRun = config[3];
+        _exeToRun = config[3].Contains(".exe") ? config[3] : config[3] + ".exe";
         _runAfterUpdate = bool.Parse(config[4]);
         _keepZip = bool.Parse(config[5]);
         _keepLauncherOpen = bool.Parse(config[6]);
-
-        MessageBox.Show(_versionFileUrl);
-        MessageBox.Show(_updateFileUrl);
-        MessageBox.Show(_exeToRun);
       }
       catch
       {
         MessageBox.Show("Config file invalid. Please, check the values.", "Taw Launcher");
         Application.Current.Shutdown();
       }
+
+      ValidateConfig();
     }
 
     private static void GenerateConfigFile()
@@ -187,6 +185,25 @@ namespace TawLauncher
         "KEEP_LAUNCHER_OPEN=FALSE\n"
       };
       File.WriteAllLines("taw.conf", config);
+    }
+
+    private static void ValidateConfig()
+    {
+      try
+      {
+        if (_versionFileUrl == String.Empty) throw new Exception("VERSION_FILE_URL");
+        if (_updateFileUrl == String.Empty) throw new Exception("APPLICATION_ZIP_URL");
+        //_automaticallyUpdate
+        if (_exeToRun == ".exe") throw new Exception("EXE_TO_RUN");
+        //_runAfterUpdate
+        //_keepZip
+        //_keepLauncherOpen
+      }
+      catch (Exception ex)
+      {
+        MessageBox.Show("Config file invalid. Please, check the values. \n Invalid value: " + ex.Message, "Taw Launcher");
+        Application.Current.Shutdown();
+      }
     }
   }
 }
