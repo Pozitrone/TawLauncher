@@ -32,7 +32,8 @@ namespace TawLauncher
 
     private bool Equals(Version other)
     {
-      return (IsNull == other.IsNull) || (Major == other.Major && Minor == other.Minor && Patch == other.Patch);
+      if (other is null) return false;
+      return (Major == other.Major && Minor == other.Minor && Patch == other.Patch);
     }
     
     // auto-generated
@@ -43,6 +44,12 @@ namespace TawLauncher
       return obj.GetType() == this.GetType() && Equals((Version) obj);
     }
 
+    public static bool Equals(Version x, Version y)
+    {
+      if (y is null) return false;
+      return (x.Major == y.Major && x.Minor == y.Minor && x.Patch == y.Patch);
+    }
+
     // auto-generated
     public override int GetHashCode()
     {
@@ -51,7 +58,6 @@ namespace TawLauncher
         int hashCode = Major;
         hashCode = (hashCode * 397) ^ Minor;
         hashCode = (hashCode * 397) ^ Patch;
-        hashCode = (hashCode * 397) ^ IsNull.GetHashCode();
         return hashCode;
       }
     }
@@ -63,16 +69,23 @@ namespace TawLauncher
 
     public static bool operator ==(Version x, Version y)
     {
-      return Equals(x, y);
+      if (x is null && y is null) return true;
+      if (x is null ^ y is null) return false;
+      return (x.Major == y.Major && x.Minor == y.Minor && x.Patch == y.Patch);
     }
 
     public static bool operator !=(Version x, Version y)
     {
+      if (x is null && y is null) return false;
+      if (x is null ^ y is null) return true;
       return !Equals(x, y);
     }
 
     public static bool operator >(Version x, Version y)
     {
+      if (x is null) x = new Version("0.0.0");
+      if (y is null) y = new Version("0.0.0");
+      
       if (x.Major > y.Major) return true;
       if (x.Major < y.Major) return false;
 
@@ -96,7 +109,5 @@ namespace TawLauncher
     {
       return !(x >= y);
     }
-
-    private bool IsNull { get; }
   }
 }

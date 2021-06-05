@@ -4,18 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="TheAshenWolf Launcher" Height="200" Width="500" WindowStyle="SingleBorderWindow" ResizeMode="NoResize"
+        Title="TheAshenWolf Launcher" Height="250" Width="500" WindowStyle="SingleBorderWindow" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Canvas>
         <Image Source="Resources/large.png" Width="200" Margin="150, 25, 150, 125"></Image>
-        <TextBlock Name="Log" Margin="50,90, 225, 90" Height="20">TAW Launcher</TextBlock>
-        <Button Margin="300, 90, 50, 90" Content="Update" Name="UpdateButton"></Button>
-        <Button Margin="300, 120, 50, 60" Content="Run without updating" Name="RunButton" Visibility="Hidden"></Button>
+        <TextBlock Name="Log" Margin="50,90, 225, 90" Height="20" Width="225" Text="Checking for updates..."></TextBlock>
+        <Button Margin="300, 90, 50, 90" Width="150" Content="Update" Name="UpdateButton" IsEnabled="False" Click="UpdateButton_OnClick"></Button>
+        <Button Margin="300, 120, 50, 60" Width="150" Content="Run without updating" Name="RunButton" IsEnabled="False" Visibility="Hidden" Click="RunButton_OnClick"></Button>
         
-        <TextBlock Margin="50,170,350,10" Height="20">Current Version:</TextBlock>
-        <TextBlock Name="CurrentVersionText" Margin="150,170,250,10" Height="20"></TextBlock>
+        <TextBlock Margin="50,170,350,10" Height="20" Width="100">Current Version:</TextBlock>
+        <TextBlock Name="CurrentVersionText" Margin="150,170,250,10" Width="100" Height="20" Text="None"></TextBlock>
         
-        <TextBlock Name="NewVersionHeader" Margin="250,170,150,10" Height="20" Visibility="Hidden">Available Version:</TextBlock>
-        <TextBlock Name="NewVersionText" Margin="350,170,50,10" Height="20" Visibility="Hidden"></TextBlock>
-    </Grid>
+        <TextBlock Name="NewVersionHeader" Margin="250,170,150,10" Width="100" Height="20" Visibility="Hidden">Available Version:</TextBlock>
+        <TextBlock Name="NewVersionText" Margin="350,170,50,10" Width="100" Height="20" Visibility="Hidden" Text=""></TextBlock>
+    </Canvas>
 </Window>

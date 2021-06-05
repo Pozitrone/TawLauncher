@@ -13,26 +13,26 @@ namespace TawLauncher
   {
     private static string _versionFileUrl;
     private static string _updateFileUrl;
-    private static bool _automaticallyUpdate = true;
+    public static bool _automaticallyUpdate { get; private set; } = true;
     private static string _exeToRun;
-    private static bool _runAfterUpdate = true;
+    public static bool _runAfterUpdate { get; private set; } = true;
     private static bool _keepZip;
     private static bool _keepLauncherOpen;
 
-    private static bool _updateAvailable;
+    public static bool _updateAvailable { get; private set; }
 
     public static Version CheckForUpdates()
     {
       Version currentVersion = CheckCurrentVersion();
       Version newVersion = CheckNewVersion();
-
-      if (newVersion == null)
+      
+      if (newVersion is null)
       {
         MessageBox.Show("Couldn't get updates. Please, check your connection.", "Taw Launcher");
         Application.Current.Shutdown();
       }
-      
-      if (currentVersion == null || currentVersion < newVersion)
+
+      if (currentVersion is null || currentVersion < newVersion)
       {
         _updateAvailable = true;
         if (_automaticallyUpdate) Update();
@@ -55,7 +55,7 @@ namespace TawLauncher
       File.Copy("temp/version.txt", "Data/version.txt");
       Directory.Delete("temp", true);
 
-      if (_runAfterUpdate) Run();
+      _updateAvailable = false;
     }
 
     public static void Run()
@@ -64,7 +64,7 @@ namespace TawLauncher
       if (!_keepLauncherOpen) Application.Current.Shutdown();
     }
 
-    private static Version CheckCurrentVersion()
+    public static Version CheckCurrentVersion()
     {
       return !Directory.Exists("Data") ? null : ReadVersionFile();
     }
@@ -121,6 +121,7 @@ namespace TawLauncher
 
     private static Version ReadVersionFile(string path = "Data/version.txt")
     {
+      if (!File.Exists(path)) return null;
       return new Version(File.ReadLines(path).First());
     }
 
@@ -201,7 +202,8 @@ namespace TawLauncher
       }
       catch (Exception ex)
       {
-        MessageBox.Show("Config file invalid. Please, check the values. \n Invalid value: " + ex.Message, "Taw Launcher");
+        MessageBox.Show("Config file invalid. Please, check the values. \n Invalid value: " + ex.Message,
+          "Taw Launcher");
         Application.Current.Shutdown();
       }
     }
