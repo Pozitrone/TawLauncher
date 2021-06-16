@@ -25,7 +25,7 @@ namespace TawLauncher
     {
       Version currentVersion = CheckCurrentVersion();
       Version newVersion = CheckNewVersion();
-      
+
       if (newVersion is null)
       {
         MessageBox.Show("Couldn't get updates. Please, check your connection.", "Taw Launcher");
@@ -98,9 +98,10 @@ namespace TawLauncher
       {
         webClient.DownloadFile(url, "temp/version.txt");
       }
-      catch
+      catch (Exception ex)
       {
-        throw new Exception("Couldn't download version file.");
+        MessageBox.Show(ex.ToString() + " ----- " + url);
+        // throw new Exception("Couldn't download version file.");
       }
     }
 
@@ -133,26 +134,30 @@ namespace TawLauncher
         GenerateConfigFile();
         Application.Current.Shutdown();
       }
-
-      string[] rawConfig = File.ReadAllLines("taw.conf");
-      //MessageBox.Show(rawConfig.Where(line => line != "" && line[0] != '#').ToList().Aggregate((x , y) => x + "\n" + y).ToString());
-      List<string> config = rawConfig.Where(line => line != "" && line[0] != '#').Select(x => x.Split('=')[1]).ToList();
-
-      try
+      else
       {
-        _versionFileUrl = config[0];
-        _updateFileUrl = config[1];
-        _automaticallyUpdate = bool.Parse(config[2]);
-        _exeToRun = config[3].Contains(".exe") ? config[3] : config[3] + ".exe";
-        _runAfterUpdate = bool.Parse(config[4]);
-        _keepZip = bool.Parse(config[5]);
-        _keepLauncherOpen = bool.Parse(config[6]);
+        string[] rawConfig = File.ReadAllLines("taw.conf");
+        //MessageBox.Show(rawConfig.Where(line => line != "" && line[0] != '#').ToList().Aggregate((x , y) => x + "\n" + y).ToString());
+        List<string> config = rawConfig.Where(line => line != "" && line[0] != '#').Select(x => x.Split(new[] { '=' }, 2)[1]).ToList();
+
+        try
+        {
+          _versionFileUrl = config[0];
+          _updateFileUrl = config[1];
+          _automaticallyUpdate = bool.Parse(config[2]);
+          _exeToRun = config[3].Contains(".exe") ? config[3] : config[3] + ".exe";
+          _runAfterUpdate = bool.Parse(config[4]);
+          _keepZip = bool.Parse(config[5]);
+          _keepLauncherOpen = bool.Parse(config[6]);
+        }
+        catch
+        {
+          MessageBox.Show("Config file invalid. Please, check the values.", "Taw Launcher");
+          Application.Current.Shutdown();
+        }
       }
-      catch
-      {
-        MessageBox.Show("Config file invalid. Please, check the values.", "Taw Launcher");
-        Application.Current.Shutdown();
-      }
+
+
 
       ValidateConfig();
     }
