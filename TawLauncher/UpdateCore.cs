@@ -19,6 +19,9 @@ namespace TawLauncher
     private static bool _keepZip;
     private static bool _keepLauncherOpen;
 
+    private static bool _hasMultipleFiles { get; set; } = false;
+    private static string[] _updateFileUrls;
+
     public static bool _updateAvailable { get; private set; }
 
     public static Version CheckForUpdates()
@@ -48,9 +51,25 @@ namespace TawLauncher
       if (!_updateAvailable) return;
 
       if (Directory.Exists("Data")) Directory.Delete("Data", true);
-      DownloadUpdateFile(_updateFileUrl);
-      ZipFile.ExtractToDirectory("Data/Application.zip", "Data/Application");
-      if (!_keepZip) File.Delete("Data/Application.zip");
+      if (!_hasMultipleFiles)
+      {
+        DownloadUpdateFile(_updateFileUrl);
+        ZipFile.ExtractToDirectory("Data/Application.zip", "Data/Application");
+        if (!_keepZip) File.Delete("Data/Application.zip");
+      }
+      else
+      {
+        int parts = 0;
+        foreach (string updateFileUrl in _updateFileUrls)
+        {
+          MessageBox.Show(updateFileUrl);
+          DownloadUpdateFile(updateFileUrl, parts.ToString());
+          ZipFile.ExtractToDirectory("Data/Application" + parts + ".zip", "Data/Application");
+          if (!_keepZip) File.Delete("Data/Application" + parts + ".zip");
+          parts++;
+        }
+      }
+      
 
       File.Copy("temp/version.txt", "Data/version.txt");
       Directory.Delete("temp", true);
@@ -105,18 +124,20 @@ namespace TawLauncher
       }
     }
 
-    private static void DownloadUpdateFile(string url)
+    private static void DownloadUpdateFile(string url, string suffix = "")
     {
       CreateDirectoryTree();
-
+      MessageBox.Show(url);
+      if (url == null) return;
+      
       WebClient webClient = new WebClient();
       try
       {
-        webClient.DownloadFile(url, "Data/Application.zip");
+        webClient.DownloadFile(url, "Data/Application" + suffix + ".zip");
       }
-      catch
+      catch (Exception ex)
       {
-        throw new Exception("Couldn't download update.");
+        throw new Exception("Couldn't download update. \n\n" + ex);
       }
     }
 
@@ -143,12 +164,19 @@ namespace TawLauncher
         try
         {
           _versionFileUrl = config[0];
-          _updateFileUrl = config[1];
           _automaticallyUpdate = bool.Parse(config[2]);
           _exeToRun = config[3].Contains(".exe") ? config[3] : config[3] + ".exe";
           _runAfterUpdate = bool.Parse(config[4]);
           _keepZip = bool.Parse(config[5]);
           _keepLauncherOpen = bool.Parse(config[6]);
+
+          string[] urls = config[1].Split('|');
+          if (urls.Length == 1) _updateFileUrl = urls[0];
+          else
+          {
+            _hasMultipleFiles = true;
+            _updateFileUrls = urls;
+          }
         }
         catch
         {
