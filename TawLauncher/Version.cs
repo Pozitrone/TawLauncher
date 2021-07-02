@@ -44,7 +44,7 @@ namespace TawLauncher
       return obj.GetType() == this.GetType() && Equals((Version) obj);
     }
 
-    public static bool Equals(Version x, Version y)
+    private static bool Equals(Version x, Version y)
     {
       if (y is null) return false;
       return (x.Major == y.Major && x.Minor == y.Minor && x.Patch == y.Patch);
@@ -104,7 +104,7 @@ namespace TawLauncher
     {
       return !(x > y);
     }
-
+    
     public static bool operator <(Version x, Version y)
     {
       return !(x >= y);

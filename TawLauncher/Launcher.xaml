@@ -15,6 +15,8 @@
         <TextBlock Margin="50,170,350,10" Height="20" Width="100">Current Version:</TextBlock>
         <TextBlock Name="CurrentVersionText" Margin="150,170,250,10" Width="100" Height="20" Text="None"></TextBlock>
         
+        <ProgressBar Margin="50,150,50,10" Width="400" Visibility="Hidden" Name="LauncherProgress"></ProgressBar>
+        
         <TextBlock Name="NewVersionHeader" Margin="250,170,150,10" Width="100" Height="20" Visibility="Hidden">Available Version:</TextBlock>
         <TextBlock Name="NewVersionText" Margin="350,170,50,10" Width="100" Height="20" Visibility="Hidden" Text=""></TextBlock>
     </Canvas>
