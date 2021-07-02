@@ -233,6 +233,8 @@ namespace TawLauncher
             HasMultipleFiles = true;
             _updateFileUrls = urls;
           }
+          
+          ValidateConfig();
         }
         catch
         {
@@ -240,8 +242,6 @@ namespace TawLauncher
           Application.Current.Shutdown();
         }
       }
-
-      ValidateConfig();
     }
 
     #endregion
@@ -382,6 +382,8 @@ namespace TawLauncher
         //_runAfterUpdate
         //_keepZip
         //_keepLauncherOpen
+        
+        CheckForUpdates();
       }
       catch (Exception ex)
       {
@@ -389,8 +391,6 @@ namespace TawLauncher
           "Taw Launcher");
         Application.Current.Shutdown();
       }
-
-      CheckForUpdates();
     }
 
     #endregion
