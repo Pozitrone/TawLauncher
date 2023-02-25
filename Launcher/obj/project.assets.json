@@ -1,0 +1,242 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "RoslynCodeTaskFactory/2.0.7": {
+        "type": "package",
+        "build": {
+          "build/RoslynCodeTaskFactory.props": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "RoslynCodeTaskFactory/2.0.7": {
+        "type": "package",
+        "build": {
+          "build/RoslynCodeTaskFactory.props": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RoslynCodeTaskFactory/2.0.7": {
+      "sha512": "UgfAOUInb7PXgdgCVTHhtpr2RCTBnPE8ZzqZhF7Tq92zxtVMQr6lYdiUfMgoPrye/viIVK1Wlgpt5JWVr1XF5Q==",
+      "type": "package",
+      "path": "roslyncodetaskfactory/2.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Sdk/Sdk.props",
+        "Sdk/Sdk.targets",
+        "build/RoslynCodeTaskFactory.props",
+        "build/net46/Microsoft.Win32.Primitives.dll",
+        "build/net46/RoslynCodeTaskFactory.dll",
+        "build/net46/System.AppContext.dll",
+        "build/net46/System.Console.dll",
+        "build/net46/System.Globalization.Calendars.dll",
+        "build/net46/System.IO.Compression.ZipFile.dll",
+        "build/net46/System.IO.Compression.dll",
+        "build/net46/System.IO.FileSystem.Primitives.dll",
+        "build/net46/System.IO.FileSystem.dll",
+        "build/net46/System.Net.Http.dll",
+        "build/net46/System.Net.Sockets.dll",
+        "build/net46/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "build/net46/System.Security.Cryptography.Algorithms.dll",
+        "build/net46/System.Security.Cryptography.Encoding.dll",
+        "build/net46/System.Security.Cryptography.Primitives.dll",
+        "build/net46/System.Security.Cryptography.X509Certificates.dll",
+        "build/net46/System.Xml.ReaderWriter.dll",
+        "build/netstandard2.0/RoslynCodeTaskFactory.dll",
+        "build/ref/Microsoft.Build.Framework.dll",
+        "build/ref/Microsoft.Build.Tasks.Core.dll",
+        "build/ref/Microsoft.Build.Utilities.Core.dll",
+        "build/ref/Microsoft.Build.dll",
+        "build/ref/Microsoft.Win32.Primitives.dll",
+        "build/ref/System.AppContext.dll",
+        "build/ref/System.Collections.Concurrent.dll",
+        "build/ref/System.Collections.Immutable.dll",
+        "build/ref/System.Collections.NonGeneric.dll",
+        "build/ref/System.Collections.Specialized.dll",
+        "build/ref/System.Collections.dll",
+        "build/ref/System.ComponentModel.Composition.dll",
+        "build/ref/System.ComponentModel.EventBasedAsync.dll",
+        "build/ref/System.ComponentModel.Primitives.dll",
+        "build/ref/System.ComponentModel.TypeConverter.dll",
+        "build/ref/System.ComponentModel.dll",
+        "build/ref/System.Console.dll",
+        "build/ref/System.Core.dll",
+        "build/ref/System.Data.Common.dll",
+        "build/ref/System.Data.dll",
+        "build/ref/System.Diagnostics.Contracts.dll",
+        "build/ref/System.Diagnostics.Debug.dll",
+        "build/ref/System.Diagnostics.FileVersionInfo.dll",
+        "build/ref/System.Diagnostics.Process.dll",
+        "build/ref/System.Diagnostics.StackTrace.dll",
+        "build/ref/System.Diagnostics.TextWriterTraceListener.dll",
+        "build/ref/System.Diagnostics.Tools.dll",
+        "build/ref/System.Diagnostics.TraceSource.dll",
+        "build/ref/System.Diagnostics.Tracing.dll",
+        "build/ref/System.Drawing.Primitives.dll",
+        "build/ref/System.Drawing.dll",
+        "build/ref/System.Dynamic.Runtime.dll",
+        "build/ref/System.Globalization.Calendars.dll",
+        "build/ref/System.Globalization.Extensions.dll",
+        "build/ref/System.Globalization.dll",
+        "build/ref/System.IO.Compression.FileSystem.dll",
+        "build/ref/System.IO.Compression.ZipFile.dll",
+        "build/ref/System.IO.Compression.dll",
+        "build/ref/System.IO.FileSystem.DriveInfo.dll",
+        "build/ref/System.IO.FileSystem.Primitives.dll",
+        "build/ref/System.IO.FileSystem.Watcher.dll",
+        "build/ref/System.IO.FileSystem.dll",
+        "build/ref/System.IO.IsolatedStorage.dll",
+        "build/ref/System.IO.MemoryMappedFiles.dll",
+        "build/ref/System.IO.Pipes.dll",
+        "build/ref/System.IO.UnmanagedMemoryStream.dll",
+        "build/ref/System.IO.dll",
+        "build/ref/System.Linq.Expressions.dll",
+        "build/ref/System.Linq.Parallel.dll",
+        "build/ref/System.Linq.Queryable.dll",
+        "build/ref/System.Linq.dll",
+        "build/ref/System.Net.Http.dll",
+        "build/ref/System.Net.NameResolution.dll",
+        "build/ref/System.Net.NetworkInformation.dll",
+        "build/ref/System.Net.Ping.dll",
+        "build/ref/System.Net.Primitives.dll",
+        "build/ref/System.Net.Requests.dll",
+        "build/ref/System.Net.Security.dll",
+        "build/ref/System.Net.Sockets.dll",
+        "build/ref/System.Net.WebHeaderCollection.dll",
+        "build/ref/System.Net.WebSockets.Client.dll",
+        "build/ref/System.Net.WebSockets.dll",
+        "build/ref/System.Net.dll",
+        "build/ref/System.Numerics.dll",
+        "build/ref/System.ObjectModel.dll",
+        "build/ref/System.Reflection.Extensions.dll",
+        "build/ref/System.Reflection.Metadata.dll",
+        "build/ref/System.Reflection.Primitives.dll",
+        "build/ref/System.Reflection.TypeExtensions.dll",
+        "build/ref/System.Reflection.dll",
+        "build/ref/System.Resources.Reader.dll",
+        "build/ref/System.Resources.ResourceManager.dll",
+        "build/ref/System.Resources.Writer.dll",
+        "build/ref/System.Runtime.CompilerServices.VisualC.dll",
+        "build/ref/System.Runtime.Extensions.dll",
+        "build/ref/System.Runtime.Handles.dll",
+        "build/ref/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "build/ref/System.Runtime.InteropServices.dll",
+        "build/ref/System.Runtime.Loader.dll",
+        "build/ref/System.Runtime.Numerics.dll",
+        "build/ref/System.Runtime.Serialization.Formatters.dll",
+        "build/ref/System.Runtime.Serialization.Json.dll",
+        "build/ref/System.Runtime.Serialization.Primitives.dll",
+        "build/ref/System.Runtime.Serialization.Xml.dll",
+        "build/ref/System.Runtime.Serialization.dll",
+        "build/ref/System.Runtime.dll",
+        "build/ref/System.Security.Claims.dll",
+        "build/ref/System.Security.Cryptography.Algorithms.dll",
+        "build/ref/System.Security.Cryptography.Csp.dll",
+        "build/ref/System.Security.Cryptography.Encoding.dll",
+        "build/ref/System.Security.Cryptography.Primitives.dll",
+        "build/ref/System.Security.Cryptography.X509Certificates.dll",
+        "build/ref/System.Security.Principal.dll",
+        "build/ref/System.Security.SecureString.dll",
+        "build/ref/System.ServiceModel.Web.dll",
+        "build/ref/System.Text.Encoding.CodePages.dll",
+        "build/ref/System.Text.Encoding.Extensions.dll",
+        "build/ref/System.Text.Encoding.dll",
+        "build/ref/System.Text.RegularExpressions.dll",
+        "build/ref/System.Threading.Overlapped.dll",
+        "build/ref/System.Threading.Tasks.Dataflow.dll",
+        "build/ref/System.Threading.Tasks.Parallel.dll",
+        "build/ref/System.Threading.Tasks.dll",
+        "build/ref/System.Threading.Thread.dll",
+        "build/ref/System.Threading.ThreadPool.dll",
+        "build/ref/System.Threading.Timer.dll",
+        "build/ref/System.Threading.dll",
+        "build/ref/System.Transactions.dll",
+        "build/ref/System.ValueTuple.dll",
+        "build/ref/System.Web.dll",
+        "build/ref/System.Windows.dll",
+        "build/ref/System.Xml.Linq.dll",
+        "build/ref/System.Xml.ReaderWriter.dll",
+        "build/ref/System.Xml.Serialization.dll",
+        "build/ref/System.Xml.XDocument.dll",
+        "build/ref/System.Xml.XPath.XDocument.dll",
+        "build/ref/System.Xml.XPath.XmlDocument.dll",
+        "build/ref/System.Xml.XPath.dll",
+        "build/ref/System.Xml.XmlDocument.dll",
+        "build/ref/System.Xml.XmlSerializer.dll",
+        "build/ref/System.Xml.dll",
+        "build/ref/System.dll",
+        "build/ref/mscorlib.dll",
+        "build/ref/netstandard.dll",
+        "roslyncodetaskfactory.2.0.7.nupkg.sha512",
+        "roslyncodetaskfactory.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "RoslynCodeTaskFactory >= 2.0.7"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\TheAshenWolf\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\UnityProjects\\Launcher\\Launcher\\Launcher.csproj",
+      "projectName": "TawLauncher",
+      "projectPath": "C:\\UnityProjects\\Launcher\\Launcher\\Launcher.csproj",
+      "packagesPath": "C:\\Users\\TheAshenWolf\\.nuget\\packages\\",
+      "outputPath": "C:\\UnityProjects\\Launcher\\Launcher\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\TheAshenWolf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "targetAlias": "net472",
+        "dependencies": {
+          "RoslynCodeTaskFactory": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.0.7, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  }
+}

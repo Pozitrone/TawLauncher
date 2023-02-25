@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\UnityProjects\\TawLauncher\\TawLauncher\\TawLauncher.csproj": {}
+  },
+  "projects": {
+    "C:\\UnityProjects\\TawLauncher\\TawLauncher\\TawLauncher.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\UnityProjects\\TawLauncher\\TawLauncher\\TawLauncher.csproj",
+        "projectName": "TawLauncher",
+        "projectPath": "C:\\UnityProjects\\TawLauncher\\TawLauncher\\TawLauncher.csproj",
+        "packagesPath": "C:\\Users\\TheAshenWolf\\.nuget\\packages\\",
+        "outputPath": "C:\\UnityProjects\\TawLauncher\\TawLauncher\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TheAshenWolf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "RoslynCodeTaskFactory": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.7, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

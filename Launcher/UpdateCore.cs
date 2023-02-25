@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using TAWLauncher;
 
 #endregion
 
@@ -204,6 +205,26 @@ namespace TawLauncher
 
     public static void ReadConfigFile()
     {
+      if (Config.SkipConfigFile)
+      {
+        _versionFileUrl = Config.VersionFileUrl;
+        AutomaticallyUpdate = Config.AutomaticallyUpdate;
+        _exeToRun = Config.ExeToRun.Contains(".exe") ? Config.ExeToRun : Config.ExeToRun + ".exe";
+        RunAfterUpdate = Config.RunAfterUpdateFinished;
+        _keepZip = Config.KeepZipFile;
+        _keepLauncherOpen = Config.KeepLauncherOpen;
+
+        string[] urls = Config.ApplicationZipUrl.Split('|');
+        if (urls.Length == 1) _updateFileUrl = urls[0];
+        else
+        {
+          HasMultipleFiles = true;
+          _updateFileUrls = urls;
+        }
+          
+        ValidateConfig();
+      }
+      
       if (!File.Exists("taw.conf"))
       {
         MessageBox.Show("Config file not found. Generating blank config file.", "Taw Launcher");
@@ -267,6 +288,27 @@ namespace TawLauncher
 
       string[] config = new string[]
       {
+        "# TAW Launcher config file",
+        "# - Lines starting with # are ignored",
+        "# - Purpose of this launcher: ",
+        "#   - Whenever the launcher is started, it offers to check for updates",
+        "#   - Checking for updates downloads a tiny text file from the server, provided in VERSION_FILE_URL",
+        "#      - The text file contains the version number of the latest version",
+        "#   - If the version number is higher than the one in the launcher, the launcher offers to update the app",
+        "#   - If the user accepts, the launcher downloads the zipped project from APPLICATION_ZIP_URL",
+        "#   - And installs it where it is supposed to be",
+        "#   - If the user doesn't accept, the launcher offers to run the app anyway",
+        "#   - EXE_TO_RUN is the name of the .exe file within the zip; this should be specified by the developer and should not be changed by the user",
+        "#   - User can set AUTOMATICALLY_UPDATE to TRUE to make the launcher automatically update the app upon startup",
+        "#   - User can set RUN_AFTER_UPDATE_FINISHED to TRUE to make the launcher automatically run the app after updating or checking that there is no update available",
+        "#   - User can set KEEP_ZIP_FILE to TRUE to make the launcher keep the zip file after updating; the zip file is not necessary for the app to run",
+        "#   - and should be deleted to save space, unless the user wants to keep it for some reason",
+        "#   - User can set KEEP_LAUNCHER_OPEN to TRUE to make the launcher keep the launcher open after starting the app. (Why would you want to do that?)\n",
+        
+        "# - Link Tips:",
+        "#   - When you copy link from DROPBOX, it ends with ?dl=0. Change it to ?dl=1 to get a direct link to the file\n\n",
+        "#   - If there is multiple files, you can separate them with | (pipe).",
+        
         "# Url where the app downloads the version.txt from",
         "VERSION_FILE_URL=\n",
 

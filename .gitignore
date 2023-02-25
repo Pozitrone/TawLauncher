@@ -1,8 +1,5 @@
-
 .idea/
-
 .vs/
-
-obj/
-
-TawLauncher/bin/
+*/bin/
+*/obj/Release/
+*/obj/Debug/

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "akE+ohqf4BEG6Ilj9J6VTZDT2wWKPB1LAT+PAPA2QPoF4u+elwsGWau+8Fx4KZqVyJBDCogDrotwJ08bSg70vg==",
+  "success": true,
+  "projectFilePath": "C:\\UnityProjects\\Launcher\\Launcher\\Launcher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TheAshenWolf\\.nuget\\packages\\roslyncodetaskfactory\\2.0.7\\roslyncodetaskfactory.2.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}

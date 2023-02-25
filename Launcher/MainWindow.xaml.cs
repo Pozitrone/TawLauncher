@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -11,6 +13,7 @@ namespace TawLauncher
       try
       {
         InitializeComponent();
+        Title = "TAW Launcher";
         UpdateCore.mainWindowInstance = this;
         UpdateCore.ReadConfigFile();
         if (UpdateCore.AutomaticallyUpdate) UpdateAfterDelay();

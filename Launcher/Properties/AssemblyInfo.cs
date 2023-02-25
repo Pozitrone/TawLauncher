@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("TawLauncher")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("TheAshenWolf")]
 [assembly: AssemblyProduct("TawLauncher")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright © TheAshenWolf 2021 - 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
