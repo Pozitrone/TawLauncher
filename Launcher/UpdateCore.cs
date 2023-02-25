@@ -147,7 +147,7 @@ namespace TawLauncher
       }
       catch (Exception ex)
       {
-        MessageBox.Show(ex + " ----- " + url);
+        MessageBox.Show(ex.Message + " ----- " + url);
       }
     }
 

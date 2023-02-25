@@ -6,18 +6,18 @@
         mc:Ignorable="d"
         Title="TheAshenWolf Launcher" Height="250" Width="500" WindowStyle="SingleBorderWindow" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
-    <Canvas>
-        <Image Source="Resources/large.png" Width="200" Margin="150, 25, 150, 125"></Image>
-        <TextBlock Name="Log" Margin="50,90, 225, 90" Height="20" Width="225" Text="Checking for updates..."></TextBlock>
+    <Canvas Background="Black">
+        <Image Name="LogoImage" Width="200" Margin="150, 25, 150, 125"></Image>
+        <TextBlock Foreground="White" Name="Log" Margin="50,90, 225, 90" Height="20" Width="225" Text="Checking for updates..."></TextBlock>
         <Button Margin="300, 90, 50, 90" Width="150" Content="Update" Name="UpdateButton" IsEnabled="False" Click="UpdateButton_OnClick"></Button>
         <Button Margin="300, 120, 50, 60" Width="150" Content="Run without updating" Name="RunButton" IsEnabled="False" Visibility="Hidden" Click="RunButton_OnClick"></Button>
         
-        <TextBlock Margin="50,170,350,10" Height="20" Width="100">Current Version:</TextBlock>
-        <TextBlock Name="CurrentVersionText" Margin="150,170,250,10" Width="100" Height="20" Text="None"></TextBlock>
+        <TextBlock Foreground="White" Margin="50,170,350,10" Height="20" Width="100">Current Version:</TextBlock>
+        <TextBlock Foreground="White" Name="CurrentVersionText" Margin="150,170,250,10" Width="100" Height="20" Text="None"></TextBlock>
         
-        <ProgressBar Margin="50,150,50,10" Width="400" Visibility="Hidden" Name="LauncherProgress"></ProgressBar>
+        <ProgressBar Foreground="White" Margin="50,150,50,10" Width="400" Visibility="Hidden" Name="LauncherProgress"></ProgressBar>
         
-        <TextBlock Name="NewVersionHeader" Margin="250,170,150,10" Width="100" Height="20" Visibility="Hidden">Available Version:</TextBlock>
-        <TextBlock Name="NewVersionText" Margin="350,170,50,10" Width="100" Height="20" Visibility="Hidden" Text=""></TextBlock>
+        <TextBlock Foreground="White" Name="NewVersionHeader" Margin="250,170,150,10" Width="100" Height="20" Visibility="Hidden">Available Version:</TextBlock>
+        <TextBlock Foreground="White" Name="NewVersionText" Margin="350,170,50,10" Width="100" Height="20" Visibility="Hidden" Text=""></TextBlock>
     </Canvas>
 </Window>

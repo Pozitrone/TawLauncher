@@ -7,9 +7,8 @@
         <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
         <UseWPF>true</UseWPF>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <OutputPath>bin/$(Configuration)/</OutputPath>
+        <OutputPath>builds/$(Configuration)/</OutputPath>
         <!-- Single File Publish -->
-        <OutputType>Exe</OutputType>
         <PublishSingleFile>true</PublishSingleFile>
         <SelfContained>true</SelfContained>
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
@@ -49,19 +48,20 @@
     </PropertyGroup>-->
 
     <ItemGroup>
-        <PackageReference Include="RoslynCodeTaskFactory" Version="2.0.7" PrivateAssets="All"/>
-        <Compile Include="$(ProjectDir)Config.generated.cs" Condition="!Exists('$(ProjectDir)Config.generated.cs')"/>
+        <Resource Include="Resources\**\*.*" />
+        <PackageReference Include="RoslynCodeTaskFactory" Version="2.0.7" PrivateAssets="All" />
+        <Compile Include="$(ProjectDir)Config.generated.cs" Condition="!Exists('$(ProjectDir)Config.generated.cs')" />
     </ItemGroup>
 
     <UsingTask TaskName="GenerateFile" TaskFactory="CodeTaskFactory" AssemblyFile="$(RoslynCodeTaskFactory)" Condition=" '$(RoslynCodeTaskFactory)' != ''">
         <ParameterGroup>
-            <Filename ParameterType="System.String" Required="true"/>
+            <Filename ParameterType="System.String" Required="true" />
         </ParameterGroup>
 
         <Task>
-            <Reference Include="System.Core"/>
-            <Using Namespace="System"/>
-            <Using Namespace="System.IO"/>
+            <Reference Include="System.Core" />
+            <Using Namespace="System" />
+            <Using Namespace="System.IO" />
 
             <Code Type="Fragment" Language="C#">
                 <![CDATA[
@@ -99,7 +99,7 @@
     </UsingTask>
 
     <Target Name="ValidateContentFiles">
-        <GenerateFile Filename="$(ProjectDir)Config.generated.cs" Condition=" '$(RoslynCodeTaskFactory)' != ''"/>
+        <GenerateFile Filename="$(ProjectDir)Config.generated.cs" Condition=" '$(RoslynCodeTaskFactory)' != ''" />
     </Target>
 
 </Project>

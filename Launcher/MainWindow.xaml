@@ -10,7 +10,7 @@
     
     
     <Grid>
-        <Image Source="Resources/large.png" Width="300" Margin="0,0,0,10" Opacity="1"></Image>
+        <Image Name="LogoImage" Width="300" Margin="0,0,0,10" Opacity="1"></Image>
         <ProgressBar Margin="0,90,0,28" Width="300" Visibility="Hidden" Name="MainProgress"> </ProgressBar>
         <TextBlock Width="200" Margin="50,100,50,0" TextAlignment="Center" FontWeight="Bold" VerticalAlignment="Bottom" Name="MainStatusText" FontSize="16">
             <TextBlock.Effect>

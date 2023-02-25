@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "akE+ohqf4BEG6Ilj9J6VTZDT2wWKPB1LAT+PAPA2QPoF4u+elwsGWau+8Fx4KZqVyJBDCogDrotwJ08bSg70vg==",
+  "dgSpecHash": "V3OWFA2G9ZzloucX/SCNrhCJXgMjt4uZVhUqSTkrpaQlPkR8BioydW63ZAe+b8TtBsBtDtz+kxfjcSAtFODQ4g==",
   "success": true,
-  "projectFilePath": "C:\\UnityProjects\\Launcher\\Launcher\\Launcher.csproj",
+  "projectFilePath": "C:\\UnityProjects\\TawLauncher\\Launcher\\Launcher.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TheAshenWolf\\.nuget\\packages\\roslyncodetaskfactory\\2.0.7\\roslyncodetaskfactory.2.0.7.nupkg.sha512"
   ],

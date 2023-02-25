@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\UnityProjects\\Launcher\\Launcher\\Launcher.csproj": {}
+    "C:\\UnityProjects\\TawLauncher\\Launcher\\Launcher.csproj": {}
   },
   "projects": {
-    "C:\\UnityProjects\\Launcher\\Launcher\\Launcher.csproj": {
+    "C:\\UnityProjects\\TawLauncher\\Launcher\\Launcher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\UnityProjects\\Launcher\\Launcher\\Launcher.csproj",
+        "projectUniqueName": "C:\\UnityProjects\\TawLauncher\\Launcher\\Launcher.csproj",
         "projectName": "TawLauncher",
-        "projectPath": "C:\\UnityProjects\\Launcher\\Launcher\\Launcher.csproj",
+        "projectPath": "C:\\UnityProjects\\TawLauncher\\Launcher\\Launcher.csproj",
         "packagesPath": "C:\\Users\\TheAshenWolf\\.nuget\\packages\\",
-        "outputPath": "C:\\UnityProjects\\Launcher\\Launcher\\obj\\",
+        "outputPath": "C:\\UnityProjects\\TawLauncher\\Launcher\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

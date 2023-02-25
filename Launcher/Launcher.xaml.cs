@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Media.Imaging;
+using TAWLauncher;
 
 namespace TawLauncher
 {
@@ -24,6 +26,7 @@ namespace TawLauncher
     {
       Version newVersion = UpdateCore.newVersion;
       Version currentVersion = UpdateCore.currentVersion;
+      LogoImage.Source = new BitmapImage(new Uri(Config.LoadingLogo));
 
       if (currentVersion != null)
       {

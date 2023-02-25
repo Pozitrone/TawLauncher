@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
+using TAWLauncher;
 
 namespace TawLauncher
 {
@@ -15,6 +15,7 @@ namespace TawLauncher
         InitializeComponent();
         Title = "TAW Launcher";
         UpdateCore.mainWindowInstance = this;
+        LogoImage.Source = new BitmapImage(new Uri(Config.LoadingLogo));
         UpdateCore.ReadConfigFile();
         if (UpdateCore.AutomaticallyUpdate) UpdateAfterDelay();
         else RunLauncherAfterDelay();

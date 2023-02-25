@@ -1,6 +1,4 @@
 ﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
@@ -12,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TheAshenWolf")]
 [assembly: AssemblyProduct("TawLauncher")]
-[assembly: AssemblyCopyright("Copyright © TheAshenWolf 2021 - 2023")]
+[assembly: AssemblyCopyright("TheAshenWolf 2021 - 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
